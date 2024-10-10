@@ -15,8 +15,14 @@ body {
     width: 200px;
 }
 
-.movie img {
+img {
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 15px;
+    border-color: blueviolet;
+    border: 50px;
 }
 
+.search-button {
+    border-radius: 50%;
+    
+}
