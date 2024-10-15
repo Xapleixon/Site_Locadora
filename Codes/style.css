@@ -1,28 +1,23 @@
-body {
-    font-family: Arial, sans-serif;
-}
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-#movie-container {
-    display: flex;
-    flex-wrap: wrap;
-}
+        #movie-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-.movie {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-}
+        .movie {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
 
-img {
-    max-width: 100%;
-    border-radius: 15px;
-    border-color: blueviolet;
-    border: 50px;
-}
-
-.search-button {
-    border-radius: 50%;
-    
-}
+        .movie img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
