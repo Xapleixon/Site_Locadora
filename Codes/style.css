@@ -1,23 +1,60 @@
-        body {
-            font-family: Arial, sans-serif;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e082c;
+}
 
-        #movie-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+.titulo {
+    text-align: center;
+    text-decoration: solid, underline;
+    color: white;
+}
 
-        .movie {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin: 10px;
-            padding: 10px;
-            width: 200px;
-            text-align: center;
-        }
+#movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
 
-        .movie img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
+.movie {
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, rgba(46, 7, 105, 0.412), rgba(25, 29, 160, 0.552), rgb(6, 54, 11));
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+
+.actors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.director {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgba(0, 244, 81, 0.437);
+    text-shadow: #1e082c;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.movie img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+.movie:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
