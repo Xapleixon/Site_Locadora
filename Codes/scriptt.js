@@ -1,20 +1,21 @@
 let slideIndex = 0;
 
-function mostrarSlides(index) {
-    const slides = document.querySelectorAll('.slide-active');
+function mostrar(index) {
+    const slides = document.querySelectorAll('.slide');
     if (index >= slides.length) {
         slideIndex = 0;
     } else if (index < 0) {
         slideIndex = slides.length - 1;
     }
     slides.forEach((slide, i) => {
-        slide.style.display = (i === slideIndex) ? 'block' : 'none';
+        slide.style.display = (i === slideIndex) ? 'flex' : 'none'; 
     });
 }
 
-function mudarslide(n) {
+function mudar(n) {
     slideIndex += n;
-    mostrarSlides(slideIndex);
+    mostrar(slideIndex);
 }
 
-mostrarSlides(slideIndex);
+
+mostrar(slideIndex);

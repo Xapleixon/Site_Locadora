@@ -28,7 +28,7 @@
     width: 450px;
     text-align: center;
     position:relative ;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     background-color: rgba(116, 116, 116, 0.836);
     color: #fff;
@@ -79,14 +79,16 @@
     transform: scale(1.05);
 }
 
-
+.slides{
+    width: 40px;
+}
 .portfolio {
     width: 900px;
-    margin-top: 300px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    margin-right: 750px;
-    align-items: center; 
+    margin-left: 152px;
+    align-items: center;
 }
 
 :root{
