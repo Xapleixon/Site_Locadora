@@ -11,10 +11,8 @@
 }
 
 #movie-container {
-    display: flex;
-    justify-content:center;
-
-    margin-top: 10px;
+    
+   
    
 }
 
@@ -38,16 +36,6 @@
  
 }
 
-.movie {
-    margin-top: 40px;
-    margin: 25px;
-    border-radius: 10px;
-    width: 150px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(45deg, rgba(46, 7, 105, 0.412), rgba(25, 29, 160, 0.552), rgb(6, 54, 11));
-    color: white;
-    font-family: 'Lora';   
-}
 
 .actors {
     display: flex;
@@ -66,17 +54,10 @@
     font-family: 'Lora';
 
 }
-.movie img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-    background-color: #ffffff;
-    display: flex;
-}
 
-.movie:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+.movie img:hover {
+    opacity: 0.9;
+    
 }
 
 .slides{
@@ -89,6 +70,8 @@
     justify-content: center;
     margin-left: 152px;
     align-items: center;
+    opacity: 0.7;
+
 }
 
 :root{
@@ -107,6 +90,54 @@
     box-sizing: border-box;
  
 }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    display: none;
+    flex: 1 0 100%; 
+}
+
+.carousel-item.active {
+    display: flex; 
+}
+
+.row {
+    display: flex;
+}
+
+.col  {
+    flex: 1;
+    text-align: center;
+    max-width: 100%;
+    min-height: 200px;
+    width: auto;
+    height: auto;
+    opacity: 0.9;
+}
+
+.col:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.carousel-control.prev {
+    left: 10px; 
+}
+
+.carousel-control.next {
+    right: 10px; 
+}
+
 body{
     height: 600vh;
     background: #1c1c1c;
@@ -263,16 +294,6 @@ button {
     border-radius: 45%;
     margin-top: 10px;
    
-}
-
-.prev {
-    left: 230px; 
-    
-}
-
-.next {
-    right: 230px; 
-  
 }
 .slide-active p {
     text-align: center; 

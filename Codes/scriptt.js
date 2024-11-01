@@ -1,21 +1,24 @@
-let slideIndex = 0;
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
 
-function mostrar(index) {
-    const slides = document.querySelectorAll('.slide');
-    if (index >= slides.length) {
-        slideIndex = 0;
-    } else if (index < 0) {
-        slideIndex = slides.length - 1;
-    }
-    slides.forEach((slide, i) => {
-        slide.style.display = (i === slideIndex) ? 'flex' : 'none'; 
+function updateCarousel() {
+    items.forEach((item, index) => {
+        item.classList.remove('active');
+        if (index === currentIndex) {
+            item.classList.add('active');
+        }
     });
 }
 
-function mudar(n) {
-    slideIndex += n;
-    mostrar(slideIndex);
-}
+document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel();
+});
 
 
-mostrar(slideIndex);
+updateCarousel();

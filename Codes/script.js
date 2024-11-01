@@ -17,8 +17,8 @@
                             <h2>${movie.Title}</h2>
                             <img src="${movie.Poster}" alt="${movie.Title}">
                             <button class="details-button" data-id="${movie.imdbID}">Ver Elenco</button>
-                            <div class="actors" id="actors-${movie.imdbID}" style="display: none;"></div>
-                            <div class="director" id="director-${movie.imdbID}" style="display: none;"></div>
+                            <div class="actors" id="actors-${movie.imdbID}></div>
+                            <div class="director" id="director-${movie.imdbID}></div>
                         `;
                         movieContainer.appendChild(movieDiv);
                     });
