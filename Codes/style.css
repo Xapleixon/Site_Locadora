@@ -123,19 +123,40 @@
     min-height: 200px;
     width: auto;
     height: auto;
-    opacity: 0.9;
+    opacity: 5.9;
 }
 
 .col:hover{
     opacity: 0.6;
     transition: 0.3s;
 }
-.carousel-control.prev {
-    left: 10px; 
+
+.carousel-control {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 10; 
 }
 
+.carousel-control.prev {
+    left: -485px;
+    background-color: #070404;
+    opacity: 0.8;
+    
+}
+
+
 .carousel-control.next {
-    right: 10px; 
+    right: 70px;
+    background-color: #070404;
+    opacity: 0.8;
+}
+
+.col{
+    position:relative;
+    left: 150px;
+ 
+   
 }
 
 body{
@@ -257,13 +278,6 @@ img.logo {
 .pesquisar label{
     height: 20px;
 }
-
-
-.bi::before, [class*=" bi-"]::before, [class^=bi-]::before {
-    width: 30px;
-}
-
-
 .carrossel {
     max-width: 650px;
     margin: auto;
@@ -302,11 +316,12 @@ button {
     font-family: 'Playfair Display';     
 }
 
-h1{
+.titulo{
     text-align:justify;
-  
-    color: #806fff;
-    padding-left: 20px;
+    margin-top: 70px;
+    color:#8d7eff;
+    background-color: #070404;
+    padding-left: 80px;
     font-family: 'Playfair Display';
     font-size: 45px;
 }
