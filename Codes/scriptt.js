@@ -1,24 +1,20 @@
 let currentIndex = 0;
 const items = document.querySelectorAll('.carousel-item');
+const carouselInner = document.querySelector('.carousel-inner');
 
 function updateCarousel() {
-    items.forEach((item, index) => {
-        item.classList.remove('active');
-        if (index === currentIndex) {
-            item.classList.add('active');
-        }
-    });
+    const offset = -currentIndex * 100;
+    carouselInner.style.transform = `translateX(${offset}%)`;
 }
 
-document.querySelector('.next').addEventListener('click', () => {
+document.querySelector('.carousel-control.next').addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % items.length;
     updateCarousel();
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
+document.querySelector('.carousel-control.prev').addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     updateCarousel();
 });
-
 
 updateCarousel();

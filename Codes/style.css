@@ -10,11 +10,7 @@
     margin-top: 10px;
 }
 
-#movie-container {
-    
-   
-   
-}
+
 
 #movie-input {
     padding: 10px;
@@ -95,18 +91,22 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-top: 100px;
 }
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.9s ease-in-out;
+    width: 100%;
 }
 
 .carousel-item {
-    display: none;
-    flex: 1 0 100%; 
+    min-width: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .carousel-item.active {
     display: flex; 
@@ -154,7 +154,7 @@
 
 .col{
     position:relative;
-    left: 150px;
+    left: -2px;
  
    
 }
@@ -164,8 +164,8 @@ body{
     background: #1c1c1c;
     color: var(--color-white);
     font-family: 'Lora', serif;
-    scroll-behavior: smooth;
     overflow-x: hidden;
+    
 }
 nav.menulateral{
 width: 50px;
@@ -176,6 +176,7 @@ top: 0;
 left: 0;
 overflow: hidden;
 transition: .1s;
+
 
 
 }
@@ -203,6 +204,8 @@ ul li.itemmenu a{
     padding: 20px 5%;
     display: flex;
     line-height: 40px;
+  
+
     
 }
 .elenco{
@@ -266,6 +269,12 @@ img.logo {
     transition: background-color 1s ease, color 1s ease;
     cursor: pointer;
 }
+
+.Celebridades a{
+    transition: all 200ms ease-in;
+}
+
+
 #searchinput{
     padding: 8px;
     border: none;
@@ -324,6 +333,9 @@ button {
     padding-left: 80px;
     font-family: 'Playfair Display';
     font-size: 45px;
+    margin-bottom: 35px;
+  
 }
+
 
 
