@@ -56,6 +56,12 @@
     
 }
 
+.imgefeito a:hover .desc strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size:1.5em;
+}
+
 .slides{
     width: 40px;
 }
@@ -69,6 +75,43 @@
     opacity: 0.7;
 
 }
+
+
+
+.-button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+.alert {
+    padding: 23px;
+    background-color: #8c17ec;
+    color: white;
+    margin-bottom: 12px;
+    width: 260px;
+    border-radius: 23px;
+    margin-left: 40%;
+    position: relative;
+  }
+  
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+ 
+  .closebtn:hover {
+    color: black;
+  }
 
 :root{
     --color-white: #ffffff;
@@ -98,6 +141,7 @@
     transition: transform 0.9s ease-in-out;
     width: 100%;
 }
+
 
 .carousel-item {
     min-width: 100%;

@@ -12,7 +12,7 @@
 
 <body>
 
-  
+
     <nav class="menulateral">
         <div class="expandir"></div>
         <ul>
@@ -43,15 +43,37 @@
         </ul>
     </nav>
 
-    
     <div class="myheader" id="myheader">
         <div class="logo">
             <img src="MPfilm.png" alt="Logo MPfilm" class="logo">
         </div>
-        <input type="text" id="movie-input" placeholder="pesquisar">
-        <button id="search-button"><i class="bi bi-search"></i></button>
-        <div id="movie-container"></div>
+        <input type="text" id="movie-input" placeholder="Pesquisar">
+        <button id="search-button" onclick="ExibirPesquisa()">
+            <i class="bi bi-search"></i>
+        </button>
     </div>
+
+    <div id="myAlert" class="alert" style="display:none;">
+        Filme não encontrado.
+        <span class="closebtn" onclick="fecharAlert()">&times;</span>
+    </div>
+
+    <script>
+        function ExibirPesquisa() {
+
+            document.getElementById("myAlert").style.display = "block";
+        }
+
+        function fecharAlert() {
+
+            document.getElementById("myAlert").style.display = "none";
+        }
+    </script>
+    </div>
+
+    <div id="movie-container"></div>
+    </div>
+
     <div class="portfolio">
         <img class="portfolio" src="portfolio.jpg" alt="portfolio">
     </div>
@@ -61,10 +83,10 @@
 
 
     <div class="carousel">
-      
+
         <div class="carousel-inner">
             <div class="carousel-item active">
-             
+
                 <div class="row">
                     <div class="col">
                         <img src="imagem1.jpg" alt="Descrição da imagem 1" style="max-width: 80%;
