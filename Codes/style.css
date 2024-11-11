@@ -96,7 +96,7 @@
     position: relative;
   }
   
-
+  
   .closebtn {
     margin-left: 15px;
     color: white;
@@ -313,6 +313,18 @@ img.logo {
     transition: background-color 1s ease, color 1s ease;
     cursor: pointer;
 }
+
+.star i {
+    font-size: 20px;
+    color: rgb(255, 255, 255);  
+    cursor: pointer; 
+    transition: color 0.3s ease; 
+}
+
+.star i.filled {
+    color: #cc8eff;  
+}
+
 
 .Celebridades a{
     transition: all 200ms ease-in;
