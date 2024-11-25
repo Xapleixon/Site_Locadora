@@ -178,23 +178,26 @@
 
 .carousel-control {
     position: absolute; 
-    top: 50%; 
+    top: 70%; 
     transform: translateY(-50%); 
     z-index: 10; 
 }
 
 .carousel-control.prev {
     left: -485px;
-    background-color: #070404;
-    opacity: 0.8;
+    background-color: #1c1c1c;
+    opacity: 0.4;
     
 }
 
 
 .carousel-control.next {
     right: 60px;
-    background-color: #070404;
-    opacity: 0.8;
+    background-color: #1c1c1c;
+    opacity: 0.4;
+}
+.carousel-control i{
+    font-size: 20px;
 }
 
 .col{
@@ -204,6 +207,7 @@
    
 }
 
+
 body{
     height: 600vh;
     background: #070404;
@@ -212,22 +216,7 @@ body{
     overflow-x: hidden;
     
 }
-nav.menulateral{
-width: 50px;
-position: fixed;
-background-color: #070404;
-padding: 40px 0 40px 1%;
-top: 0;
-left: 0;
-overflow: hidden;
-transition: .1s;
 
-
-
-}
-nav.menulateral:hover{
-width: 200px;
-}
 .expandir{
     width: 100%;
     padding-left: 10px;
@@ -281,8 +270,8 @@ img.logo {
     align-items: center;
 }
 .myheader{
-    background-color: var(--color-black);
-    box-shadow: 1px, 1px, 4px var(--color-dark2);
+    background-color: #1c1c1c;
+    box-shadow: 1px, 1px, 4px #1c1c1c;
     height: 4.5rem;
     justify-content: space-between;
     padding: 0 30%;
@@ -313,7 +302,9 @@ img.logo {
     border: 2px solid #8c17ec;
     transition: background-color 1s ease, color 1s ease;
     cursor: pointer;
+    
 }
+
 
 .star i {
     font-size: 20px;
@@ -382,17 +373,38 @@ button {
     font-family: 'Playfair Display';     
 }
 
-.titulo{
-    text-align:justify;
-    margin-top: 4%;
-    color:#8d7eff;
+.titulo {
+    text-align: justify;
+    margin-top: 8%;
+    color: #8d7eff;
     background-color: #1c1c1c;
     padding-left: 80px;
     font-family: 'Playfair Display';
     font-size: 40px;
     margin-bottom: 2%;
-  
+    position: relative; 
+    z-index: 1; 
 }
+
+
+nav.menulateral {
+    width: 50px;
+    height: 100%;
+    position: fixed;
+    background-color: #1c1c1c;
+    padding: 40px 0 40px 1%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .1s;
+    z-index: 2; 
+    opacity: 0.8;
+}
+
+nav.menulateral:hover {
+    width: 200px;
+}
+
 
 
 .carrossel-film {
@@ -435,8 +447,8 @@ button {
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
 }
-.plus:hover{
-    color: #8c17ec;
+.plus i.filled {
+    color: #cc8eff;  
 }
 
 
@@ -460,7 +472,7 @@ button {
 
 .top10 {
     text-align: justify;
-    margin-top: 4%;
+    margin-top: 5%;
     color: #8d7eff;
     background-color: #1c1c1c;
     padding-left: 75px;
@@ -475,3 +487,28 @@ button {
     font-weight: 400;
     font-style: normal;
   }
+  
+.carrossel-film-left{
+    left: -480px;
+    background-color: #070404;
+    opacity: 0.8;
+    position: absolute;
+    top: 195%;
+
+
+}
+ .carrossel-film-right {
+    right: 26px;
+    background-color: #070404;
+    opacity: 0.8;
+    position: absolute;
+    top: 195%;
+}
+
+button.carrossel-film-left i,
+button.carrossel-film-right i{
+    font-size: 28px;
+}
+html{
+    scroll-behavior: smooth;
+}

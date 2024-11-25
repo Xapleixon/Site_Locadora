@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,34 +12,38 @@
 </head>
 
 <body>
+   
     <nav class="menulateral">
-        <div class="expandir"></div>
-        <ul>
-            <li class="itemmenu">
-                <a href="#celebridades">
-                    <span class="icon"><i class="bi bi-film"></i></span>
-                    <span class="link">Celebridades</span>
-                </a>
-            </li>
-            <li class="itemmenu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-ticket-perforated"></i></span>
-                    <span class="link">Categoria</span>
-                </a>
-            </li>
-            <li class="itemmenu">
-                <a href="http://127.0.0.1:5500/siteaba/login.html" target="_self">
-                    <span class="icon"><i class="bi bi-door-open"></i></span>
-                    <span class="link">Login</span>
-                </a>
-            </li>
-            <li class="itemmenu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-list-stars"></i></span>
-                    <span class="link">Favoritos</span>
-                </a>
-            </li>
-        </ul>
+        <section class="Celebri-dades">
+            <div class="expandir"></div>
+            <ul>
+                <li class="itemmenu">
+                    
+                    <a href="#Celebridades">
+                        <span class="icon"><i class="bi bi-film"></i></span>
+                        <span class="link">Celebridades</span>
+                    </a>
+                </li>
+                <li class="itemmenu">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-ticket-perforated"></i></span>
+                        <span class="link">Categoria</span>
+                    </a>
+                </li>
+                <li class="itemmenu">
+                    <a href="http://127.0.0.1:5500/siteaba/login.html" target="_self">
+                        <span class="icon"><i class="bi bi-door-open"></i></span>
+                        <span class="link">Login</span>
+                    </a>
+                </li>
+                <li class="itemmenu">
+                    <a href="#">
+                        <span class="icon"><i class="bi bi-list-stars"></i></span>
+                        <span class="link">Favoritos</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
     </nav>
 
     <div class="myheader" id="myheader">
@@ -56,6 +61,14 @@
         <span class="closebtn" onclick="fecharAlert()">&times;</span>
     </div>
 
+    <div id="movie-container"></div>
+</div>
+
+<div class="portfolio">
+    <img class="portfolio" src="portfolio.jpg" alt="portfolio">
+</div>
+<script src="script.js"></script>
+
     <script>
         function ExibirPesquisa() {
 
@@ -68,39 +81,24 @@
         }
     </script>
     </div>
+    
 
-    <div id="movie-container"></div>
-    </div>
+    <div class="carousel" id="Celebridades">
 
-    <div class="portfolio">
-        <img class="portfolio" src="portfolio.jpg" alt="portfolio">
-    </div>
-    <script src="script.js"></script>
-
-    <h1 class="titulo">Celebridades mais populares</h1>
-
-
-    <div class="carousel">
-
+        <h1 class="titulo">Celebridades mais populares</h1>
+   
         <div class="carousel-inner">
+            
             <div class="carousel-item active">
-
                 <div class="row">
                     <span class="star"><i class="bi bi-bookmark-star"></i></span>
                     <div class="col">
-                        <img src="imagem1.jpg" alt="Descrição da imagem 1" style="max-width: 80%;
-                        border-radius: 38%;
-                        aspect-ratio: 1 / 1;
-                        height: 172px;">
+                        <img src="imagem1.jpg" alt="Descrição da imagem 1" style="max-width: 80%; border-radius: 38%; height: 172px;">
                         <p>Jonnhy Depp</p>
-
                     </div>
                     <span class="star"><i class="bi bi-bookmark-star"></i></span>
                     <div class="col">
-                        <img src="imagem2.jpg" alt="Descrição da imagem 2" style="max-width: 80%;
-                        border-radius: 38%;
-                        aspect-ratio: 1 / 1;
-                        height: 172px;">
+                        <img src="imagem2.jpg" alt="Descrição da imagem 2" style="max-width: 80%; border-radius: 38%; height: 172px;">
                         <p>Paul Cusack</p>
                     </div>
                     <span class="star"><i class="bi bi-bookmark-star"></i></span>
@@ -253,10 +251,9 @@
         <script src="scriptt.js"></script>
     </div>
 
-    <h1 class="top10">Top 10 MPfilmSite</h1>
+    <h1 class="top10">Top 5 mais populares do MPfilmSite</h1>
 
     <div class="carrossel-film">
-   
         <div class="card-filme">
             <div class="poster">
                 <div class="fundoposter">
@@ -266,7 +263,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="card-filme">
             <div class="poster">
                 <div class="fundoposter">
@@ -276,6 +273,7 @@
                 </div>
             </div>
         </div>
+
         <div class="card-filme">
             <div class="poster">
                 <div class="fundoposter">
@@ -285,6 +283,7 @@
                 </div>
             </div>
         </div>
+
         <div class="card-filme">
             <div class="poster">
                 <div class="fundoposter">
@@ -294,6 +293,7 @@
                 </div>
             </div>
         </div>
+
         <div class="card-filme">
             <div class="poster">
                 <div class="fundoposter">
@@ -303,11 +303,8 @@
                 </div>
             </div>
         </div>
-    
-    
-    </div>
-    
-   
+    <script src="plusicon.js"></script>
+
 </body>
 
 </html>
