@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperFlix Player</title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #SuperFlixAPIContainerVideo {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            background: #000;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h1>SuperFlix Player</h1>
+    <div>
+        <label for="type">Escolha o tipo:</label>
+        <select id="type">
+            <option value="serie">Série</option>
+            <option value="filme">Filme</option>
+        </select>
+        <br>
+        <input type="text" id="imdb" placeholder="Digite o código IMDb" required>
+        <br>
+        <input type="number" id="season" placeholder="Temporada (apenas para série)" min="1">
+        <input type="number" id="episode" placeholder="Episódio (apenas para série)" min="1">
+        <br>
+        <button onclick="loadVideo()">Carregar Vídeo</button>
+    </div>
+    <div id="SuperFlixAPIContainerVideo">
+        <p style="color: white;">O vídeo aparecerá aqui.</p>
+    </div>
+
+
+
+    <script>
+
+        function loadVideo() {
+            const type = document.getElementById('type').value;
+            const imdb = document.getElementById('imdb').value.trim();
+            const season = document.getElementById('season').value.trim();
+            const episode = document.getElementById('episode').value.trim();
+
+            if (!imdb) {
+                alert('Por favor, insira o código IMDb.');
+                return;
+            }
+
+            const container = document.getElementById('SuperFlixAPIContainerVideo');
+            container.innerHTML = ''; 
+
+            if (type === "filme") {
+                SuperFlixAPIPluginJS(type, imdb, "", "");
+            } else if (type === "serie") {
+                if (!season || !episode) {
+                    alert('Por favor, insira a temporada e o episódio para séries.');
+                    return;
+                }
+                SuperFlixAPIPluginJS(type, imdb, season, episode);
+            }
+        }
+        function SuperFlixAPIPluginJS(type, imdb, season, episode) {
+            const frame = document.getElementById('SuperFlixAPIContainerVideo');
+            const url = `https://superflixapi.dev/${type}/${imdb}/${season}/${episode}`;
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.frameBorder = "0";
+            iframe.allowFullScreen = true;
+            iframe.width = "100%";
+            iframe.height = "450px";
+            frame.innerHTML = "";
+            frame.appendChild(iframe);
+        }
+    </script>
+
+</body>
+</html>
