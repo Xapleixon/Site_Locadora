@@ -30,9 +30,23 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
     font-family: 'Lora';
- 
+
 }
 
+.movie p{
+    color: #c5c5c5;
+    font-family: 'Lora';
+}
+
+.movie h2{
+    color: #8d7eff;
+    font-size: 20px;
+    font-family: 'Kanit';
+}
+.movie a{
+    color: #4535c1;
+    font-family: 'Lora';
+}
 
 .actors {
     display: flex;
@@ -405,6 +419,36 @@ nav.menulateral:hover {
     width: 200px;
 }
 
+.indicativo {
+    position: absolute;
+    left: 0; 
+    top: 1; 
+    z-index: 1; 
+}
+
+.titleind { 
+    position: absolute;
+    top: 2%;
+    right: 8%;
+    left: 9%;
+    font-family: "Kanit";
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0.4;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    display: none;
+}
+
+.indicativo:hover + .titleind {
+    display: block;
+}
+
+.indicativo {
+    cursor: pointer; 
+}
+
 
 
 .carrossel-film {
@@ -465,7 +509,7 @@ nav.menulateral:hover {
 .title {
     margin-top: 10px;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
