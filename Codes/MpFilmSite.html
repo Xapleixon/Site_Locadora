@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
     <link rel="icon" type="image/png" href="logomp.png">
     <link rel="stylesheet" href="style.css">
     <title>MPfilmSite.com</title>
@@ -24,15 +26,22 @@
                     </a>
                 </li>
                 <li class="itemmenu">
-                    <a href="#">
+                    <a href="#Filmes">
                         <span class="icon"><i class="bi bi-ticket-perforated"></i></span>
-                        <span class="link">Categoria</span>
+                        <span class="link">Filmes</span>
+
                     </a>
                 </li>
                 <li class="itemmenu">
                     <a href="http://127.0.0.1:5500/siteaba/login.html" target="_self">
                         <span class="icon"><i class="bi bi-door-open"></i></span>
                         <span class="link">Login</span>
+                    </a>
+                </li>
+                <li class="itemmenu">
+                    <a href="#top">
+                        <span class="icon"><i class="bi bi-5-circle"></i></span>
+                        <span class="link">Populares</span>
                     </a>
                 </li>
                 <li class="itemmenu">
@@ -57,7 +66,7 @@
     </div>
 
     <div id="myAlert" class="alert" style="display:none;">
-        Filme não encontrado<i class="bi bi-exclamation-diamond"></i>
+        Filme não encontrado.
         <span class="closebtn" onclick="fecharAlert()">&times;</span>
     </div>
 
@@ -237,7 +246,7 @@
         <script src="scriptt.js"></script>
     </div>
 
-    <h1 class="top10">Top 5 mais populares do MPfilmSite</h1>
+    <h1 class="top10" id="top">Top 5 mais populares do MPfilmSite</h1>
 
     <div class="carrossel-film">
         <div class="card-filme">
@@ -247,7 +256,7 @@
                     <img class="indicativo" src="class18.png" alt="img indicativo" style="width: 12%;">
                     <span class="titleind">Classificação Indicativa</span>
                     <img class="posterimg" src="film1.jpg" alt="imagem 1" style="max-width: 88%; aspect-ratio: 1 / 1;">
-                    <p class="title">Massacre da serra eletrica</p>
+                    <p class="title">Massacre da Serra Eletrica</p>
                 </div>
             </div>
         </div>
@@ -271,7 +280,7 @@
                     <img class="indicativo" src="class16.png" alt="img indicativo" style="width: 10%;">
                     <span class="titleind">Classificação Indicativa</span>
                     <img class="posterimg" src="film3.jpg" alt="imagem 3" style="max-width: 88%; aspect-ratio: 1 / 1;">
-                    <p class="title">O diabo De Cada Dia</p>
+                    <p class="title">O Diabo De Cada Dia</p>
                 </div>
             </div>
         </div>
@@ -300,66 +309,124 @@
             </div>
         </div>
     </div>
-        <script src="plusicon.js"></script>
+    <script src="plusicon.js"></script>
 
-        <script>
-            const apiKey = "D7FRhOMZc1ygb3uejrLFoTHeXCx0o2zN7dBmqsSP";
-        
-            async function searchMovie() {
-                const query = document.getElementById("movie-input").value;
-                const resultsDiv = document.getElementById("results");
-                const alertDiv = document.getElementById("myAlert");  
-                resultsDiv.innerHTML = "Carregando...";
-        
-              
-                if (query.trim() === "") {
-                    resultsDiv.innerHTML = "Por favor, insira o nome de um filme.";
-                    alertDiv.style.display = "none"; 
-                    return;
-                }
-        
-                try {
-                    const response = await fetch(`https://api.watchmode.com/v1/search/?apiKey=${apiKey}&search_field=name&search_value=${encodeURIComponent(query)}`);
-                    const data = await response.json();
-        
-                    resultsDiv.innerHTML = "";  
-        
-                    if (data.title_results.length === 0) {
-                       
-                        alertDiv.style.display = "block";
-                    } else {
-                       
-                        alertDiv.style.display = "none";
-        
-                        
-                        data.title_results.forEach(movie => {
-                            const movieDiv = document.createElement("div");
-                            movieDiv.classList.add("movie");
-                            movieDiv.innerHTML = `
+    <script>
+        const apiKey = "D7FRhOMZc1ygb3uejrLFoTHeXCx0o2zN7dBmqsSP";
+
+        async function searchMovie() {
+            const query = document.getElementById("movie-input").value;
+            const resultsDiv = document.getElementById("results");
+            const alertDiv = document.getElementById("myAlert");
+            resultsDiv.innerHTML = "Carregando...";
+
+
+            if (query.trim() === "") {
+                resultsDiv.innerHTML = "Por favor, insira o nome de um filme.";
+                alertDiv.style.display = "none";
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://api.watchmode.com/v1/search/?apiKey=${apiKey}&search_field=name&search_value=${encodeURIComponent(query)}`);
+                const data = await response.json();
+
+                resultsDiv.innerHTML = "";
+
+                if (data.title_results.length === 0) {
+
+                    alertDiv.style.display = "block";
+                } else {
+
+                    alertDiv.style.display = "none";
+
+
+                    data.title_results.forEach(movie => {
+                        const movieDiv = document.createElement("div");
+                        movieDiv.classList.add("movie");
+                        movieDiv.innerHTML = `
                                 <h2>${movie.name}</h2>
+                                <img>${movie.searchMovie}</img>
                                 <p>Ano de lançamento: ${movie.year || "N/A"}</p>
                                 <p><a href="${movie.tmdb_url}" target="_blank">Ver no TMDb</a></p>
                             `;
-                            resultsDiv.appendChild(movieDiv);
-                        });
-                    }
-                } catch (error) {
-                   
-                    resultsDiv.innerHTML = "Erro ao obter os dados.";
-                    console.error(error);
-                    alertDiv.style.display = "none"; 
+                        resultsDiv.appendChild(movieDiv);
+                    });
                 }
+            } catch (error) {
+
+                resultsDiv.innerHTML = "Erro ao obter os dados.";
+                console.error(error);
+                alertDiv.style.display = "none";
             }
-        
-           
-            function fecharAlert() {
-                document.getElementById("myAlert").style.display = "none";
-            }
-        </script>
-        
-        <div class="card-results">
-        <div id="results"></div>
+        }
+
+
+        function fecharAlert() {
+            document.getElementById("myAlert").style.display = "none";
+        }
+    </script>
+
+    <div class="filmefind" id="Filmes">
+        <p> Filmes Encontrados: </p>
     </div>
+
+    <div id="results"></div>
+
+    <div class="footer">
+        <div class="footerdiv">
+            <div class="footermp">
+                <div class="footercontainer">
+                    <a class="footitle">
+                        <span class="titlef">Obtenha o App</span>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footerlogin">
+        <div class="containerlogin">
+            <a class="logintitle">
+                <span class="titlel">Faça login para melhor experiência</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footersocials">
+        <div class="containertitle">
+            <a class="redetitle">
+                <span class="titler">Nos siga nas nossas redes sociais!</span>
+            </a>
+        </div>
+        <div class="footer-container">
+
+            <ul class="social-links">
+                <li>
+                    <a href="https://www.tiktok.com" target="_blank" title="Tiktok" class="social-icon tiktok">
+                        <i class="fab fa-tiktokj"></i><i class="bi bi-tiktok"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i><i class="bi bi-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com" target="_blank" title="Twitter" class="social-icon twitter">
+                        <i class="fab fa-twitter"></i><i class="bi bi-twitter-x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.discord.com" target="_blank" title="Discord" class="social-icon discord">
+                        <i class="fab fa-discord"></i><i class="bi bi-discord"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
 
 </html>
